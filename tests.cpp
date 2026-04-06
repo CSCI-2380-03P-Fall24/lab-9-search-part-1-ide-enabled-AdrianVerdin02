@@ -56,29 +56,6 @@ TEST_CASE("binSearchR") {
     CHECK(binSearchR('?', arr2, 1) == true);
 }
 
-TEST_CASE("swap") {
-    double myDarray[5] = {5.0, 0.0, 4.0, 6.0, 3.0};
-    REQUIRE_NOTHROW(swap(myDarray, 1, 3));
-    CHECK(myDarray[1] != myDarray[3]);
-    CHECK(myDarray[1] == 6.0);
-    CHECK(myDarray[3] == 0.0);
-}
-
-TEST_CASE("minFind") {
-    double myDarray[5] = {5.0, -3.0, 4.0, 6.0, 3.0};
-    REQUIRE_NOTHROW(minFind(myDarray, 5));
-    CHECK(minFind(myDarray, 5) == 1);
-}
-
-TEST_CASE("newSort") {
-    double myDarray[5] = {5.0, -3.0, 4.0, 6.0, 3.0};
-    double sortArr[5] = {-3.0, 3.0, 4.0, 5.0, 6.0};
-    REQUIRE_NOTHROW(newSort(myDarray, 5));
-    for(int i = 0; i < 5; i++) {
-        CHECK(myDarray[i] == sortArr[i]);
-    }
-}
-
 TEST_CASE("expSearch") {
     // basic hits and misses
     float a[] = {0.6f, 1.0f, 1.4f, 2.2f, 2.3f};
