@@ -8,7 +8,12 @@ using namespace std;
 //     many types of data (int, char, string, etc.)
 //  Replace the ... with proper parameters
 template <typename flexibleType> // ???
-void printArray(...) {}
+void printArray(flexibleType arr[], int size) {
+    
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << ", ";
+    }
+}
 
 // Implement a sequential search algorithm
 // your function should search for a target value (target)
@@ -16,6 +21,12 @@ void printArray(...) {}
 // return true if target exists in the array within this range,
 //    return false otherwise
 bool seqSearch(string target, string arr[], int start, int end) {
+    
+    for (int i = start; i < end; i++) {
+        if (arr[i] == target) {
+            return true;
+        }
+    }
     return false;
 }
 
@@ -23,6 +34,22 @@ bool seqSearch(string target, string arr[], int start, int end) {
 // Return true if target exists in the array with size n,
 //    return false otherwise 
 bool binSearch(float target, float arr[], int n) {
+    int left = 0, right = n - 1;
+
+    while(left <= right) {
+        int mid = left + (right - left);
+
+        if(arr[mid] == target) {
+            return true;
+        }
+        else if(arr[mid] < target) {
+            left = mid + 1;
+        }
+        else if(arr[mid] > target) {
+            right = mid - 1;
+        }
+        
+    }
     return false;	
 }
 
@@ -31,10 +58,16 @@ bool binSearch(float target, float arr[], int n) {
 //   return false otherwise
 bool binSearchR(char target, char charray[], int n) {
     // base case
-
+    if (charray[n] == charray[n/2]) {
+        return false;
+    }
     //general case
+    bool check = (target == charray[n/2])
+    if (charray[n/2] < target) {
+        
+    }
 
-    return false;
+    return binSearchR(target, charray, n) + check;
 }
 
 // Implement Exponential Search
